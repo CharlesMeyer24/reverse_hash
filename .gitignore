@@ -1,0 +1,6 @@
+/target
+/temps_exec.ods
+/.~lock.temps_exec.ods#
+/launch.json
+/Cargo.lock
+/.vscode

@@ -3,6 +3,27 @@ use std::sync::Mutex;
 #[cfg(debug_assertions)]
 use std::time::Instant;
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn retrieve_data_test() {
+        let mut l_word = retrieve_data("6f8f57715090da2632453988d9a1501b", 24);
+        assert_eq!(l_word, "m");
+
+        l_word = retrieve_data("ab86a1e1ef70dff97959067b723c5c24", 24);
+        assert_eq!(l_word, "me");
+
+        
+        l_word = retrieve_data("710fbd54c4617707aacef35b88c5b6da", 24);
+        assert_eq!(l_word, "meu");
+
+        l_word = retrieve_data("8f005cb95f2ca99877c2d4db3e33861c", 24);
+        assert_eq!(l_word, "meuh");
+    }
+}
+
 fn retrieve_data_impl(
     p_depth_limit: i8,
     mut p_depth: i8,
